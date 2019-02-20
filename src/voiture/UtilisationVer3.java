@@ -142,7 +142,7 @@ public class UtilisationVer3{
 	}
 
 
-	//Tester le garage1 avec MAPPING
+
 	public static void testMappings1() {
 		Garage garage = new Garage();
 
@@ -243,7 +243,6 @@ public class UtilisationVer3{
 
 		UtilisationVer3.tri2(garage);
 	}
-	/*
 
 	/**
 	 * Garage CompteurComparateur
@@ -251,7 +250,7 @@ public class UtilisationVer3{
 	 * l'on r�f�rence ensuite par un garage CompteurComparable
 	 * en effet, les v�hicules ayant tous un compteur � 0 lors de leur instanciation ne seraient pas ajout�s 
 	 * � un garage CompteurComparable, car un Set est sans doublon par rapport au crit�re de comparaison
-	
+	*/
 
 	public static void testGarage2Bis() {
 		Garage2 garageTemp = new Garage2();
@@ -263,6 +262,7 @@ public class UtilisationVer3{
 		garageTemp.add(new Vehicule(4.5));
 		System.out.println(garageTemp);
 
+		/*
 		
 		Garage2 garage = new Garage2(IVehiculeComparator.COMPTEUR_ORDER);
 		garage = garageTemp;
@@ -281,9 +281,11 @@ public class UtilisationVer3{
 				System.out.println(e.getMessage());
 			}
 		}
+		
 		System.out.println(garage);
 
 		UtilisationVer3.tri2(garage);
+		*/
 	}
 
 
@@ -291,23 +293,22 @@ public class UtilisationVer3{
 	//Fonction qui trie le garage avec TREESET
 	private static void tri2(Garage2 garage) {
 		System.out.println("\n\n##Tri selon le no immatriculation ##");
-		garage.triNoImmatriculion();
+		//garage.triNumImmatriculion();
 		System.out.println(garage);
 
 		System.out.println("\n\n##Tri selon le compteur km totalisateur ##");
-		garage.triCompteur();
+		//garage.triCompteur();
 		System.out.println(garage);
-		garage.triCompteur();
+		//garage.triCompteur();
 		
 		System.out.println("\n\n##Tri selon la jauge ##");
-		garage.triJauge();
+		//garage.triJauge();
 		System.out.println(garage);
-		garage.triJauge();
+		//garage.triJauge();
 
 		System.out.println("\n\n##Tri selon le no immatriculation ##");
-		garage.triNoImmatriculion();
+		//garage.triNoImmatriculion();
 		System.out.println(garage);
 		
 	}
-	*/
 }
