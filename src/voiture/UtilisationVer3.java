@@ -142,7 +142,7 @@ public class UtilisationVer3{
 	}
 
 
-
+	//Tester le garage1 avec MAPPING
 	public static void testMappings1() {
 		Garage garage = new Garage();
 
