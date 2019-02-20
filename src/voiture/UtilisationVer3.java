@@ -16,7 +16,8 @@ public class UtilisationVer3{
 		UtilisationVer3.testMappings1();
 
 		System.out.println("\n\n######## TESTS DU GARAGE Collection: Set Comparable########");
-		//UtilisationVer3.testGarage2();
+		UtilisationVer3.testGarage2();
+		
 		System.out.println("\n\n######## TESTS DU GARAGE Collection: Set CompteurComparator########");
 		//UtilisationVer3.testGarage2Bis();
 		
@@ -168,15 +169,15 @@ public class UtilisationVer3{
 		System.out.println(garage);
 
 		garage.resetPartielAll();
-		System.out.println("\n remise � 0 des compteurs partiels de tous les v�hiculess!");
+		System.out.println("\n Remise a 0 des compteurs partiels de tous les vehiculess!");
 		System.out.println(garage);
 
 		garage.faireLePleinAll();
-		System.out.println("\n faire le plein de tous les v�hicules s'il reste moins de 10 litres !");
+		System.out.println("\n Faire le plein de tous les vehicules s'il reste moins de 10 litres !");
 		System.out.println(garage);
 		
 	}
-/*
+
 	
 	public static void testMappings2() {
 		Garage2 garage = new Garage2();
@@ -211,6 +212,7 @@ public class UtilisationVer3{
 		System.out.println("\n faire le plein de tous les v�hicules s'il reste moins de 10 litres !");
 		System.out.println(garage);
 	}
+	
 
 
 	//Tester le garage2 avec TREESET
@@ -241,6 +243,7 @@ public class UtilisationVer3{
 
 		UtilisationVer3.tri2(garage);
 	}
+	/*
 
 	/**
 	 * Garage CompteurComparateur
