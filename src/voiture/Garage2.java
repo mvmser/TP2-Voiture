@@ -27,19 +27,27 @@ public class Garage2 implements Iterable<Vehicule> {
 		return vehicules.toString();
 	}
 	
-	public void resetPartielAll() {
-		Fonction<Vehicule> resetPartiel = new ResetPartiel();
-		this.map(resetPartiel);
-	}
-
-	public void faireLePleinAll() {
-		Fonction<Vehicule> faireLePlein = new FaireLePlein();
-		this.map(faireLePlein);
-    }
-
-    public void map(Fonction<Vehicule> f) {
-		for(Vehicule vehicule: vehicules){
-			f.applyIt(vehicule);
+	//On remet a 0 tous les compteur partiels
+    public void resetPartielAll() {
+    	for(Vehicule vehicule : this) {
+			vehicule.getCompteur().resetPartiel();
 		}
 	}
+
+    //On fait le plein de tous les vehicules du garage
+	public void faireLePleinAll() {
+		for(Vehicule vehicule : this) {
+			vehicule.faireLePlein();
+		}
+    }
+	
+//	public void triCompteur() {
+//		vehicules.sort();
+//    }
+//	
+//	public void triNoImmatriculion(){
+//        Collections.sort(vehicules);
+//    }
+
+ 
 }

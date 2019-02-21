@@ -42,6 +42,7 @@ public class Compteur {
 		this.partiel %= CONST;
 	}
 
+	//Retourne le compteur avec 2 chiffres après la virgule et centré à gauche
 	@Override
 	public String toString(){
 		String compteurString = 

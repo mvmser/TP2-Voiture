@@ -1,8 +1,12 @@
 package voiture;
 
+//Exception en cas de dépacement du réservoir lorsqu'on met de l'essence
 public class CapaciteDepasseeException extends Exception{
-
-	private static final long serialVersionUID = 3455269160790106171L;
+	/**
+	 * 
+	 * Ajout du serialVersionUID pour la sérialisation et desérialisation de l'objet.
+	 */
+	private static final long serialVersionUID = 3455269160790106171L; 
 
 	public CapaciteDepasseeException(String message){
         //this.depassementJauge = depassementJauge;

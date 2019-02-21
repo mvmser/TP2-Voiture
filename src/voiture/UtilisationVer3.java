@@ -18,14 +18,14 @@ public class UtilisationVer3{
 		System.out.println("\n\n######## TESTS DU GARAGE Collection: Set Comparable########");
 		UtilisationVer3.testGarage2();
 		
-		System.out.println("\n\n######## TESTS DU GARAGE Collection: Set CompteurComparator########");
+		//System.out.println("\n\n######## TESTS DU GARAGE Collection: Set CompteurComparator########");
 		//UtilisationVer3.testGarage2Bis();
 		
-		System.out.println("\n\n######## TESTS DU GARAGE Collection: Set Mappings ########");
+		//System.out.println("\n\n######## TESTS DU GARAGE Collection: Set Mappings ########");
 		//UtilisationVer3.testMappings2();
 	}
 	
-	//TESTER LE COMPTEUR
+	//-----TESTER LE COMPTEUR-----
 	public static void testCompteur() {
 		Compteur compteur = new Compteur();
 		System.out.println(compteur);
@@ -39,12 +39,13 @@ public class UtilisationVer3{
 		System.out.println(compteur);
 	}
 
-	//TESTER LE VEHICULE
+	//-----TESTER LE VEHICULE-----
 	public static void testVehicule() {
 		Vehicule vehicule1 = new Vehicule(5.3);
 		Vehicule vehicule2 = new Vehicule(8.7);
 		System.out.println(vehicule1);
 
+		//On fais rouler le vehicule1 une distance de 100km
 		double distanceParcourue = vehicule1.rouler(100);
 		System.out.println("Le vehicule " + vehicule1.getNumImmatriculation() + " a parcouru " + 
 				((int)( distanceParcourue* 100.0)) / 100.0 + "kms");
@@ -52,7 +53,7 @@ public class UtilisationVer3{
 
 		vehicule1.faireLePlein();
 
-
+		//On fais rouler le vehicule1 une distance de 300km
 		distanceParcourue = vehicule1.rouler(300);
 		System.out.println("Le vehicule " + vehicule1.getNumImmatriculation() + " a parcouru " + 
 				((int)( distanceParcourue* 100.0)) / 100.0 + "kms");
@@ -60,24 +61,28 @@ public class UtilisationVer3{
 
 		vehicule1.faireLePlein();
 
+		//On fais rouler le vehicule1 une distance de 700km
 		distanceParcourue = vehicule1.rouler(700);
 		System.out.println("Le vehicule " + vehicule1.getNumImmatriculation() + " a parcouru " + 
 				((int)( distanceParcourue* 100.0)) / 100.0 + "kms");
 		System.out.println(vehicule1);
 
+		//On fais rouler le vehicule1 une distance de 200km
 		distanceParcourue = vehicule1.rouler(200);
 		System.out.println("Le vehicule " + vehicule1.getNumImmatriculation() + " a parcouru " + 
 				((int)( distanceParcourue* 100.0)) / 100.0 + "kms");
 		System.out.println(vehicule1);
 
+		
 		vehicule1.rouler(540);
 		System.out.println(vehicule1);
 		vehicule1.faireLePlein();
 		System.out.println(vehicule1);
+		
 		vehicule1.rouler(260);
 		System.out.println(vehicule1);
 
-		
+		//On met de lessence si sa capacité est depassee 
 		try {
 			vehicule1.mettreDeLessence(6);
 		} catch (CapaciteDepasseeException e) {
@@ -94,16 +99,19 @@ public class UtilisationVer3{
 		
 
 		System.out.println(vehicule2);
+		
+		//On compare vehicule1 avec vehicule2
 		System.out.println(vehicule1.compareTo(vehicule1));
 		System.out.println(vehicule1.compareTo(vehicule2));
 
 	}
 	
 	
-	//Tester le garage1 avec ARRAYLIST
+	//-----Tester le garage1 avec ARRAYLIST-----
 	public static void testGarage1() {
 		Garage garage = new Garage();
 
+		//On ajouter different vehicule dans le garage
 		garage.add(new Vehicule(5.7));
 		garage.add(new Vehicule(6.2));
 		garage.add(new Vehicule(8.5));
@@ -111,12 +119,15 @@ public class UtilisationVer3{
 		garage.add(new Vehicule(4.5));
 		System.out.println(garage);
 
+		//On parcours le garage et on fait le plein a chaque vehicule de ce garage
 		for(Vehicule vehicule : garage) {
 			vehicule.faireLePlein();
+			//On fait rouler chaque vehicule d'une distance aleatoire
 			vehicule.rouler(Math.random() * 1000);
 		}
 		System.out.println(garage);
 
+		//On essae
 		for(Vehicule vehicule : garage) {
 			try {
 				vehicule.mettreDeLessence((int) (Math.random() * 100));
@@ -215,7 +226,7 @@ public class UtilisationVer3{
 	
 
 
-	//Tester le garage2 avec TREESET
+	//-----Tester le garage2 avec TREESET-----
 	public static void testGarage2() {
 		Garage2 garage = new Garage2();
 
@@ -290,7 +301,7 @@ public class UtilisationVer3{
 
 
 	
-	//Fonction qui trie le garage avec TREESET
+	//-----Fonction qui trie le garage avec TREESET-----
 	private static void tri2(Garage2 garage) {
 		System.out.println("\n\n##Tri selon le no immatriculation ##");
 		//garage.triNumImmatriculion();

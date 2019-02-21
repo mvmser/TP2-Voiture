@@ -49,17 +49,21 @@ public class Vehicule implements Comparable<Vehicule> {
 		}	
 	}
 	
+	//On fait le plein au vehicule au mettant la jauge egale au reservoir
 	public void faireLePlein() {
 		this.jauge = RESERVOIR;
 	}
 	
+	//On fait rouler un vehicule en prennant en parametre une distance
 	public double rouler(double distance){
 		double essenceConsommee = this.consoKm*distance / 100.0;
 		
+		//Si l'essence consommée est suffisante, on retourne la distance effectuer
 		if(essenceConsommee <= this.jauge){
 			this.jauge -= essenceConsommee;
 			this.compteur.add(distance);
 			return distance;
+		//Sinon, on retourne la distance que le vehicule peut faire pour arriver au maximum de sa jauge (sa distance effective)
 		}else{
 			double distanceEffective = distance * this.jauge / essenceConsommee;
 			this.jauge = 0;
@@ -68,6 +72,8 @@ public class Vehicule implements Comparable<Vehicule> {
 		}
 	}	 
 	
+	
+	//On comparare deux nomero d'immatriculation de vehicule
 	public int compareTo(Vehicule vehicule){
 		return this.numImmatriculation - vehicule.numImmatriculation;
 	}

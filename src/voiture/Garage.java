@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Iterator;
-import java.util.*;
+
 
 public class Garage implements Iterable<Vehicule> {
 	//Liste contenant plusieurs vehicules
@@ -16,6 +16,7 @@ public class Garage implements Iterable<Vehicule> {
         vehicules = new ArrayList<Vehicule>();
     }
 
+    //Retourne un iterator de la collection vehicule (qui est une liste)
     @Override
     public Iterator<Vehicule> iterator(){
         return vehicules.iterator();
@@ -26,37 +27,39 @@ public class Garage implements Iterable<Vehicule> {
         vehicules.add(vehicule);
     }
 
+    //Retourne le garage entier sous forme de string
     @Override
     public String toString(){
         return vehicules.toString();
     }
 
-
-    //Trier selon le num d'immatriculation
+    //Trier le garage selon le num d'immatriculation grace a la fonction sort
     public void triNoImmatriculion(){
         Collections.sort(vehicules);
     }
 
-    //Trier selon le compteur
+    //Trier le garage selon le compteur, on specifie notre classe ComparateurCompeur 
+    //qui redefini compare pour comparer deux totalisateur
     public void triCompteur() {
 		Collections.sort(vehicules, new ComparateurCompteur());
     }
 
+    //On remet a 0 tous les compteur partiels
     public void resetPartielAll() {
-		Fonction<Vehicule> resetPartiel = new ResetPartiel();
-		this.map(resetPartiel);
-	}
-
-	public void faireLePleinAll() {
-		Fonction<Vehicule> faireLePlein = new FaireLePlein();
-		this.map(faireLePlein);
-    }
-
-    public void map(Fonction<Vehicule> f) {
-		for(Vehicule vehicule: vehicules){
-			f.applyIt(vehicule);
+    	for(Vehicule vehicule : this) {
+			vehicule.getCompteur().resetPartiel();
 		}
 	}
+
+    //On fait le plein de tous les vehicules du garage
+	public void faireLePleinAll() {
+		for(Vehicule vehicule : this) {
+			vehicule.faireLePlein();
+		}
+    }
+
+	
+ 
     
 
 }
