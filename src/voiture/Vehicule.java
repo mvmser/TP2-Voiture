@@ -1,6 +1,5 @@
 package voiture;
 
-
 public class Vehicule implements Comparable<Vehicule> {
 	//ATTRIBUTS
 	private static int registre = 0;

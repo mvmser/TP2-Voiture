@@ -127,7 +127,6 @@ public class UtilisationVer3{
 		}
 		System.out.println(garage);
 
-		//On essae
 		for(Vehicule vehicule : garage) {
 			try {
 				vehicule.mettreDeLessence((int) (Math.random() * 100));
